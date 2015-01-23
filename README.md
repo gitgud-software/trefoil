@@ -1,2 +1,2 @@
-# trefoil
-A 4chan Browser for Pebble
+# Trefoil
+## A 4chan Browser for Pebble
