@@ -6,7 +6,7 @@ and takes no responsibility for said content.
 All content is pulled from 4chan.
 Issues are not guaranteed to get fixed.
 
-https://www.4chan.org/
+Content Source: https://www.4chan.org/
 
 ## Issues
 
