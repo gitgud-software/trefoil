@@ -7,7 +7,6 @@
 var UI = require('ui');
 var ajax = require('ajax');
 var Vector2 = require('vector2');
-var Vibe = require('ui/vibe');
 
 
 var mainmenu;
@@ -16,7 +15,7 @@ var postmenu;
 var postCard;
 var failCard = new UI.Card({
     title: 'Error',
-    body: ';-;',
+    body: 'Can\'t connect to the Internet. Check your connection and try again.',
     scrollable: false,
     style: 'large'
 });
