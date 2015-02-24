@@ -132,6 +132,10 @@ var parsePost = function(data) {
         if (data.posts[i].no === undefined) {
             no = 'No. ???';
         }
+        var noRaw = data.posts[i].no;
+        if (data.posts[i].no === undefined) {
+            no = '???';
+        }
         var name = data.posts[i].name;
         if (data.posts[i].name === undefined) {
             name = '';
@@ -148,6 +152,7 @@ var parsePost = function(data) {
                 subtitle: subtitle,
                 com: com,
                 no: no,
+                noRaw: noRaw,
                 name: name
             });
         }
@@ -217,6 +222,12 @@ var postGet = function (dataIn, boardIn) {
                                 }
                               console.log(cardContent);
                             });
+                          
+                            postmenu.on('longSelect', function(g) {
+                              var threadURL = 'https://boards.4chan.org' + boardIn + 'thread/' + dataIn.item.no + '#p' + g.item.noRaw;
+                              console.log('Opening ' + threadURL);
+                              Pebble.openURL(threadURL);
+                            });
                         });
   }
 };
@@ -249,6 +260,12 @@ if (dataIn.item.title !== undefined) {
                 console.log('Retrieving posts...');
                 postGet(f, boardName);
             });
+            threadmenu.on('longSelect', function(f) {
+                var threadURL = 'https://boards.4chan.org' + boardName + 'thread/' + f.item.no;
+                console.log('Opening ' + threadURL);
+                Pebble.openURL(threadURL);
+
+            });
         },
         function(error) {
             console.log('Failed to retrieve threads!');
@@ -277,6 +294,13 @@ var boardGet = function(dataIn) {
     mainmenu.on('select', function(e) {
         console.log('Retrieving threads...');
         threadGet(e);
+    });
+  
+    mainmenu.on('longSelect', function(f) {
+                var threadURL = 'https://boards.4chan.org' + f.item.title + 'catalog.html';
+                console.log('Opening ' + threadURL);
+                Pebble.openURL(threadURL);
+
     });
 };
 
