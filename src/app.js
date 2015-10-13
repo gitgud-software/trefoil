@@ -167,7 +167,8 @@ var loadingIcon = new UI.Image({
     position: new Vector2(0, 0),
     size: new Vector2(144, 168),
     image: 'images/Trefoil Icon.png',
-    backgroundColor: 'green'
+    compositing: 'set'
+    
 });
 
 var postGet = function (dataIn, boardIn) {
