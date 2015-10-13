@@ -14,3 +14,4 @@ Content Source: https://www.4chan.org/
 2. At least one particularly long post on /biz/ broke the post Card in a way I can't reproduce yet.
 3. No image support. Sorry, but this is a text-only app.
 4. Webpages only open in Pebble's Webview page normally used for settings. This app does not open Clover, Chanu, or your web browser of choice.
+5. Can't scroll past Page 4 due to changes in the way Pebble.js handles memory. This is being fixed.
