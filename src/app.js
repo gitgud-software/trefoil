@@ -6,16 +6,13 @@
 // Import libraries for UI, AJAX, etc.
 var UI = require('ui');
 var ajax = require('ajax');
-var Vector2 = require('vector2');
-
 
 var mainmenu;
 var threadmenu;
 var postmenu;
 var postCard;
 var failCard = new UI.Card({
-    textColor: 'green',
-    backgroundColor: 'black',
+    backgroundColor: 'green',
     title: 'Error',
     body: 'Can\'t connect to the Internet. Check your connection and try again.',
     scrollable: false,
@@ -162,15 +159,6 @@ var parsePost = function(data) {
     return postList;
 };
 
-var loading = new UI.Window();
-var loadingIcon = new UI.Image({
-    position: new Vector2(0, 0),
-    size: new Vector2(144, 168),
-    image: 'images/Trefoil Icon.png',
-    compositing: 'set'
-    
-});
-
 var postGet = function (dataIn, boardIn) {
   if (boardIn !== undefined && dataIn.item.no !== undefined) {
                     ajax({
@@ -302,7 +290,6 @@ var boardGet = function(dataIn) {
             items: boardList
         }]
     });
-    loading.hide();
     if (mainmenu !== undefined) {
         mainmenu.show();
     } else {
@@ -320,9 +307,6 @@ var boardGet = function(dataIn) {
 
     });
 };
-
-loading.add(loadingIcon);
-loading.show();
 
 ajax({
         url: 'https://a.4cdn.org/boards.json',

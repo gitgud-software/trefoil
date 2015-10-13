@@ -3,14 +3,13 @@
     "capabilities": [
         ""
     ],
-    "companyName": "hackallofit@outlook.com",
-    "longName": "Trefoil 2.0",
+    "companyName": "Gitgud Software",
+    "longName": "Trefoil",
     "projectType": "pebblejs",
     "resources": {
         "media": [
             {
                 "file": "images/menu_icon.png",
-                "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
                 "type": "png"
             },
@@ -31,14 +30,15 @@
             },
             {
                 "file": "images/Trefoil Icon.png",
+                "menuIcon": true,
                 "name": "IMAGES_TREFOIL_ICON_PNG",
                 "type": "png"
             }
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Trefoil 2.0",
-    "uuid": "27f61dbf-5fc5-4bef-a8c8-f19a20bba19b",
+    "shortName": "Trefoil",
+    "uuid": "11f471d2-206c-4f26-9130-d2b2bf3fdf05",
     "versionCode": 1,
     "versionLabel": "1.0",
     "watchapp": {
