@@ -14,6 +14,8 @@ var threadmenu;
 var postmenu;
 var postCard;
 var failCard = new UI.Card({
+    textColor: 'green',
+    backgroundColor: 'black',
     title: 'Error',
     body: 'Can\'t connect to the Internet. Check your connection and try again.',
     scrollable: false,
@@ -165,7 +167,7 @@ var loadingIcon = new UI.Image({
     position: new Vector2(0, 0),
     size: new Vector2(144, 168),
     image: 'images/Trefoil Icon.png',
-    backgroundColor: 'white'
+    backgroundColor: 'green'
 });
 
 var postGet = function (dataIn, boardIn) {
@@ -182,6 +184,10 @@ var postGet = function (dataIn, boardIn) {
                                 threadTitle = '???';
                             }
                             postmenu = new UI.Menu({
+                               textColor: 'black',
+                               backgroundColor: 'green',
+                               highlightBackgroundColor: 'black',
+                               highlightTextColor: 'green',
                                 sections: [{
                                     title: threadTitle,
                                     items: postList
@@ -209,6 +215,8 @@ var postGet = function (dataIn, boardIn) {
                                     cardContent = g.item.com;
                                 }
                                 postCard = new UI.Card({
+                                    textColor: 'black',
+                                    backgroundColor: 'green',
                                     title: cardTitle,
                                     subtitle: cardSub,
                                     body: cardContent,
@@ -248,6 +256,10 @@ if (dataIn.item.title !== undefined) {
             }
             console.log('Retrieved threads in ' + boardName + '!');
             threadmenu = new UI.Menu({
+                textColor: 'black',
+                backgroundColor: 'green',
+                highlightBackgroundColor: 'black',
+                highlightTextColor: 'green',
                 sections: threadList
             });
             if (threadmenu !== undefined) {
@@ -280,6 +292,10 @@ var boardGet = function(dataIn) {
     var boardList = parseBoards(dataIn);
     console.log('Boards retrieved!');
     mainmenu = new UI.Menu({
+        textColor: 'black',
+        backgroundColor: 'green',
+        highlightBackgroundColor: 'black',
+        highlightTextColor: 'green',
         sections: [{
             title: 'Boards',
             items: boardList
