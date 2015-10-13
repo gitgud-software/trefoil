@@ -6,14 +6,13 @@
 // Import libraries for UI, AJAX, etc.
 var UI = require('ui');
 var ajax = require('ajax');
-var Vector2 = require('vector2');
-
 
 var mainmenu;
 var threadmenu;
 var postmenu;
 var postCard;
 var failCard = new UI.Card({
+    backgroundColor: 'green',
     title: 'Error',
     body: 'Can\'t connect to the Internet. Check your connection and try again.',
     scrollable: false,
@@ -160,14 +159,6 @@ var parsePost = function(data) {
     return postList;
 };
 
-var loading = new UI.Window();
-var loadingIcon = new UI.Image({
-    position: new Vector2(0, 0),
-    size: new Vector2(144, 168),
-    image: 'images/Trefoil Icon.png',
-    backgroundColor: 'white'
-});
-
 var postGet = function (dataIn, boardIn) {
   if (boardIn !== undefined && dataIn.item.no !== undefined) {
                     ajax({
@@ -182,6 +173,10 @@ var postGet = function (dataIn, boardIn) {
                                 threadTitle = '???';
                             }
                             postmenu = new UI.Menu({
+                               textColor: 'black',
+                               backgroundColor: 'green',
+                               highlightBackgroundColor: 'black',
+                               highlightTextColor: 'green',
                                 sections: [{
                                     title: threadTitle,
                                     items: postList
@@ -209,6 +204,8 @@ var postGet = function (dataIn, boardIn) {
                                     cardContent = g.item.com;
                                 }
                                 postCard = new UI.Card({
+                                    textColor: 'black',
+                                    backgroundColor: 'green',
                                     title: cardTitle,
                                     subtitle: cardSub,
                                     body: cardContent,
@@ -248,6 +245,10 @@ if (dataIn.item.title !== undefined) {
             }
             console.log('Retrieved threads in ' + boardName + '!');
             threadmenu = new UI.Menu({
+                textColor: 'black',
+                backgroundColor: 'green',
+                highlightBackgroundColor: 'black',
+                highlightTextColor: 'green',
                 sections: threadList
             });
             if (threadmenu !== undefined) {
@@ -280,12 +281,15 @@ var boardGet = function(dataIn) {
     var boardList = parseBoards(dataIn);
     console.log('Boards retrieved!');
     mainmenu = new UI.Menu({
+        textColor: 'black',
+        backgroundColor: 'green',
+        highlightBackgroundColor: 'black',
+        highlightTextColor: 'green',
         sections: [{
             title: 'Boards',
             items: boardList
         }]
     });
-    loading.hide();
     if (mainmenu !== undefined) {
         mainmenu.show();
     } else {
@@ -303,9 +307,6 @@ var boardGet = function(dataIn) {
 
     });
 };
-
-loading.add(loadingIcon);
-loading.show();
 
 ajax({
         url: 'https://a.4cdn.org/boards.json',

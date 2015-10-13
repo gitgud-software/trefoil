@@ -3,7 +3,7 @@
     "capabilities": [
         ""
     ],
-    "companyName": "GitGud Software",
+    "companyName": "Gitgud Software",
     "longName": "Trefoil",
     "projectType": "pebblejs",
     "resources": {
@@ -36,11 +36,13 @@
             }
         ]
     },
+    "sdkVersion": "3",
     "shortName": "Trefoil",
     "uuid": "11f471d2-206c-4f26-9130-d2b2bf3fdf05",
     "versionCode": 1,
-    "versionLabel": "0.10",
+    "versionLabel": "1.0",
     "watchapp": {
+        "hiddenApp": false,
         "watchface": false
     }
 }
