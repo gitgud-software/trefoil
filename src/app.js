@@ -41,13 +41,11 @@ var parseBoards = function(data) {
         var subtitle = data.boards[i].title;
         var boardID = data.boards[i].board;
 
-        if (title != '/f/') {
             items.push({
                 title: title,
                 subtitle: subtitle,
                 boardID: boardID
             });
-        }
     }
     return items;
 };
