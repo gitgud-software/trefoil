@@ -171,10 +171,10 @@ var postGet = function (dataIn, boardIn) {
                                 threadTitle = '???';
                             }
                             postmenu = new UI.Menu({
-                               textColor: 'black',
-                               backgroundColor: 'green',
-                               highlightBackgroundColor: 'black',
-                               highlightTextColor: 'green',
+                              textColor: 'oxfordBlue',
+                              backgroundColor: 'electricBlue',
+                              highlightBackgroundColor: 'oxfordBlue',
+                              highlightTextColor: 'white',
                                 sections: [{
                                     title: threadTitle,
                                     items: postList
@@ -203,7 +203,7 @@ var postGet = function (dataIn, boardIn) {
                                 }
                                 postCard = new UI.Card({
                                     textColor: 'black',
-                                    backgroundColor: 'green',
+                                    backgroundColor: 'electricBlue',
                                     title: cardTitle,
                                     subtitle: cardSub,
                                     body: cardContent,
@@ -243,10 +243,10 @@ if (dataIn.item.title !== undefined) {
             }
             console.log('Retrieved threads in ' + boardName + '!');
             threadmenu = new UI.Menu({
-                textColor: 'black',
-                backgroundColor: 'green',
-                highlightBackgroundColor: 'black',
-                highlightTextColor: 'green',
+                textColor: 'oxfordBlue',
+                backgroundColor: 'electricBlue',
+                highlightBackgroundColor: 'oxfordBlue',
+                highlightTextColor: 'white',
                 sections: threadList
             });
             if (threadmenu !== undefined) {
@@ -279,12 +279,12 @@ var boardGet = function(dataIn) {
     var boardList = parseBoards(dataIn);
     console.log('Boards retrieved!');
     mainmenu = new UI.Menu({
-        textColor: 'black',
-        backgroundColor: 'green',
-        highlightBackgroundColor: 'black',
-        highlightTextColor: 'green',
+        textColor: 'oxfordBlue',
+        backgroundColor: 'electricBlue',
+        highlightBackgroundColor: 'oxfordBlue',
+        highlightTextColor: 'white',
         sections: [{
-            title: 'Boards',
+          title: 'Boards',
             items: boardList
         }]
     });
