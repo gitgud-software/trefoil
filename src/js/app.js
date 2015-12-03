@@ -62,12 +62,10 @@ var parseThreads = function(data) {
             }
             var title;
             if (data[i].threads[j].com !== undefined) {
-                title = data[i].threads[j].com;
-                title = process(title);
+                title = process(data[i].threads[j].com).substring(0,25);
             }
             if (data[i].threads[j].sub !== undefined) {
-                title = data[i].threads[j].sub;
-                title = process(title);
+                title = process(data[i].threads[j].sub).substring(0,25);
             }
             if (data[i].threads[j].filename !== undefined &&
                 data[i].threads[j].ext !== undefined &&
